@@ -1,6 +1,7 @@
 import Foundation
 
 public final class Commerce: Generator {
+
   public func color() -> String {
     return generate("commerce.color")
   }
@@ -29,7 +30,7 @@ public final class Commerce: Generator {
   }
 
   public func price() -> Double {
-    let arc4randoMax: Double = 0x100000000
+    let arc4randoMax:Double = 0x100000000
     return floor(Double((Double(arc4random()) / arc4randoMax) * 100.0) * 100) / 100.0
   }
 

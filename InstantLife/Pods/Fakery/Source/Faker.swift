@@ -1,4 +1,5 @@
 public final class Faker {
+
   public var locale: String {
     didSet {
       if locale != oldValue {
@@ -18,7 +19,6 @@ public final class Faker {
   public let phoneNumber: PhoneNumber
   public let team: Team
   public let number: Number
-  public let bank: Bank
 
   let parser: Parser
 
@@ -27,6 +27,7 @@ public final class Faker {
   public init(locale: String = Config.defaultLocale) {
     self.locale = locale
     parser = Parser(locale: self.locale)
+
     address = Address(parser: parser)
     app = App(parser: parser)
     business = Business(parser: parser)
@@ -38,6 +39,5 @@ public final class Faker {
     phoneNumber = PhoneNumber(parser: parser)
     team = Team(parser: parser)
     number = Number()
-    bank = Bank(parser: parser)
   }
 }

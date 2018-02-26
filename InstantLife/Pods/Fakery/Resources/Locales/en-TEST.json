@@ -53,8 +53,7 @@
       },
       "internet": {
         "free_email": ["gmail.com"],
-        "domain_suffix": ["com"],
-        "hashtag": ["#art"]
+        "domain_suffix": ["com"]
       },
       "lorem": {
         "words": ["alias"],
@@ -109,15 +108,6 @@
         "name": ["Namfix"],
         "version": ["0.#.#"],
         "author": ["#{Name.name}"]
-      },
-      "bank": {
-        "name": ["ABN AMRO CORPORATE FINANCE LIMITED"],
-        "swiftBic": ["AAFMGB21"],
-        "ibanDetails": {
-          "bankCountryCode": ["EN"],
-          "ibanLetterCode": ["????"],
-          "ibanDigits": ["############"],
-        }
       }
     }
   }

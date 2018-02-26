@@ -1,27 +1,24 @@
 import Foundation
 
 public final class Parser {
+
   public var locale: String {
     didSet {
       if locale != oldValue {
-        loadData(forLocale: locale)
+        loadData()
       }
     }
   }
 
-  private var data = [String: Any]()
-  let provider: Provider
+  var data = [String: Any]()
+  var provider: Provider
 
   // MARK: - Initialization
 
   public init(locale: String = Config.defaultLocale) {
     self.locale = locale
     provider = Provider()
-    loadData(forLocale: locale)
-
-    if locale != Config.defaultLocale {
-      loadData(forLocale: Config.defaultLocale)
-    }
+    loadData()
   }
 
   // MARK: - Parsing
@@ -49,13 +46,25 @@ public final class Parser {
   }
 
   public func fetchRaw(_ key: String) -> Any? {
-    let result = fetchRaw(key, forLocale: locale)
+    let parts = key.components(separatedBy: ".")
 
-    guard locale != Config.defaultLocale else {
-      return result
+    guard let localeData = data[locale] as? [String: Any],
+      var parsed = localeData["faker"] as? [String: Any],
+      !parts.isEmpty else { return nil }
+
+    var result: Any?
+
+    for part in parts {
+      guard let parsedPart = parsed[part] as? [String: Any] else {
+        result = parsed[part]
+        continue
+      }
+
+      parsed = parsedPart
+      result = parsedPart
     }
 
-    return result ?? fetchRaw(key, forLocale: Config.defaultLocale)
+    return result
   }
 
   func parse(_ template: String, forSubject subject: String) -> String {
@@ -68,7 +77,7 @@ public final class Parser {
                                       options: .caseInsensitive)
       let matches = regex.matches(in: string as String,
         options: .reportCompletion,
-        range: NSRange(location: 0, length: string.length))
+        range: NSMakeRange(0, string.length))
 
       guard !matches.isEmpty else {
         return template
@@ -108,33 +117,11 @@ public final class Parser {
     return text
   }
 
-  private func fetchRaw(_ key: String, forLocale locale: String) -> Any? {
-    let parts = key.components(separatedBy: ".")
-
-    guard let localeData = data[locale] as? [String: Any],
-      var parsed = localeData["faker"] as? [String: Any],
-      !parts.isEmpty else { return nil }
-
-    var result: Any?
-
-    for part in parts {
-      guard let parsedPart = parsed[part] as? [String: Any] else {
-        result = parsed[part]
-        continue
-      }
-
-      parsed = parsedPart
-      result = parsedPart
-    }
-
-    return result
-  }
-
-  private func getSubject(_ key: String) -> String {
+  func getSubject(_ key: String) -> String {
     var subject: String = ""
     var parts = key.components(separatedBy: ".")
 
-    if !parts.isEmpty {
+    if parts.count > 0 {
       subject = parts[0]
     }
 
@@ -143,15 +130,18 @@ public final class Parser {
 
   // MARK: - Data loading
 
-  private func loadData(forLocale locale: String) {
+  func loadData() {
     guard let localeData = provider.dataForLocale(locale),
       let parsedData = try? JSONSerialization.jsonObject(with: localeData, options: .allowFragments),
-      let json = parsedData as? [String: Any],
-      let localeJson = json[locale] else {
-        print("JSON file for '\(locale)' locale was not found.")
+      let json = parsedData as? [String: Any] else {
+        if locale != Config.defaultLocale {
+          locale = Config.defaultLocale
+        } else {
+          fatalError("JSON file for '\(locale)' locale was not found.")
+        }
         return
     }
 
-    data[locale] = localeJson
+    data = json
   }
 }
