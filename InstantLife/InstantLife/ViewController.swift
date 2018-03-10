@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //die()
         let hasLaunchedKey = "HasLaunched"
         let defaults = UserDefaults.standard
         var hasLaunched = defaults.bool(forKey: hasLaunchedKey)
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
                 print("textFieldText")
             }
             mainTextView.text = textFieldText
+            highlightCurrentAge()
         }
         
     }
@@ -58,8 +60,7 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var ageButton: UIButton!
-    @IBAction func age(_ sender: Any) {
-    }
+
     func updateTextView(message:String)
     {
         
@@ -70,6 +71,35 @@ class ViewController: UIViewController {
         mainTextView.text = textFieldText
         
         
+        
+    }
+    func updateTextViewAge(message:String)
+    {
+        textViewEmptyLine()
+        textFieldText = userDefaults.value(forKey: "textFieldText") as! String
+        textFieldText = textFieldText + "\n" + message
+        let string_to_color = message
+        
+        let range = (textFieldText as NSString).range(of: string_to_color)
+        
+        let attribute = NSMutableAttributedString.init(string: textFieldText)
+        attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
+        userDefaults.set(textFieldText, forKey: "textFieldText")
+        mainTextView.attributedText = attribute
+        
+        
+        
+    }
+    func highlightCurrentAge()
+    {
+        textFieldText = userDefaults.value(forKey: "textFieldText") as! String
+        let string_to_color = String(person.age) + " Years Old"
+        let range = (textFieldText as NSString).range(of: string_to_color)
+        
+        let attribute = NSMutableAttributedString.init(string: textFieldText)
+        attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
+        userDefaults.set(textFieldText, forKey: "textFieldText")
+        mainTextView.attributedText = attribute
         
     }
     func textViewEmptyLine()
@@ -86,6 +116,8 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        savePerson()
+        
         if let vc = segue.destination as? UserViewController
         {
             vc.stats = [person.statHappiness, person.statAppearance, person.statFitness, person.statIntelligence, person.statSocial]
@@ -183,6 +215,22 @@ class ViewController: UIViewController {
         userDefaults.synchronize()
     }
     
+    @IBAction func age(_ sender: Any) {
+        person.age = person.age + 1
+        let string = String(person.age) + " Years Old"
+        
+        updateTextViewAge(message: string)
+        
+        
     
+    }
+    func die()
+    {
+        let hasLaunchedKey = "HasLaunched"
+        userDefaults.set(false, forKey: hasLaunchedKey)
+        userDefaults.set("", forKey: "textFieldText")
+        mainTextView.text = textFieldText
+        
+    }
 }
 

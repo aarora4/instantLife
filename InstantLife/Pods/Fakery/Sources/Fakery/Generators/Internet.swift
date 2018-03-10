@@ -1,8 +1,7 @@
 import Foundation
 
 public final class Internet: Generator {
-
-  let lorem: Lorem
+  private let lorem: Lorem
 
   public required init(parser: Parser) {
     self.lorem = Lorem(parser: parser)
@@ -99,16 +98,20 @@ public final class Internet: Generator {
   }
 
   public func url() -> String {
-    return "http://\(domainName())/\(username())"
+    return "https://\(domainName())/\(username())"
   }
 
   public func image(width: Int = 320, height: Int = 200) -> String {
-    return "http://lorempixel.com/\(width)/\(height)"
+    return "https://lorempixel.com/\(width)/\(height)"
   }
 
   public func templateImage(width: Int = 320, height: Int = 200,
-    backColorHex: String = "000000", frontColorHex: String = "ffffff") -> String {
-      return "http://dummyimage.com/\(width)x\(height)/\(backColorHex)/\(frontColorHex)"
+                            backColorHex: String = "000000", frontColorHex: String = "ffffff") -> String {
+      return "https://dummyimage.com/\(width)x\(height)/\(backColorHex)/\(frontColorHex)"
+  }
+
+  public func hashtag() -> String {
+    return generate("internet.hashtag")
   }
 
   // @ToDo - slug

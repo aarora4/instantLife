@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		52117DD0203BC40E00969AAE /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52117DCF203BC40E00969AAE /* UserViewController.swift */; };
-		52117DD1203CA4A200969AAE /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52117DC9203BBD0000969AAE /* userIcon.png */; };
 		52315E6A203B980100D8AE8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52315E69203B980100D8AE8C /* AppDelegate.swift */; };
 		52315E6C203B980100D8AE8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52315E6B203B980100D8AE8C /* ViewController.swift */; };
 		52315E6F203B980100D8AE8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52315E6D203B980100D8AE8C /* Main.storyboard */; };
@@ -25,7 +24,6 @@
 /* Begin PBXFileReference section */
 		0E5C423D653672C7DC4BE334 /* Pods-InstantLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstantLife/Pods-InstantLife.release.xcconfig"; sourceTree = "<group>"; };
 		1498A4DD627696FCA75D781C /* Pods-InstantLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstantLife/Pods-InstantLife.debug.xcconfig"; sourceTree = "<group>"; };
-		52117DC9203BBD0000969AAE /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = userIcon.png; path = ../../../../Downloads/userIcon.png; sourceTree = "<group>"; };
 		52117DCF203BC40E00969AAE /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = SOURCE_ROOT; };
 		52315E66203B980100D8AE8C /* InstantLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstantLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52315E69203B980100D8AE8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				52315E69203B980100D8AE8C /* AppDelegate.swift */,
 				52315E6B203B980100D8AE8C /* ViewController.swift */,
 				52315E6D203B980100D8AE8C /* Main.storyboard */,
-				52117DC9203BBD0000969AAE /* userIcon.png */,
 				52315E73203B980100D8AE8C /* Assets.xcassets */,
 				52315E75203B980100D8AE8C /* LaunchScreen.storyboard */,
 				52315E78203B980100D8AE8C /* Info.plist */,
@@ -171,7 +168,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52117DD1203CA4A200969AAE /* userIcon.png in Resources */,
 				52315E77203B980100D8AE8C /* LaunchScreen.storyboard in Resources */,
 				52315E74203B980100D8AE8C /* Assets.xcassets in Resources */,
 				52315E6F203B980100D8AE8C /* Main.storyboard in Resources */,
