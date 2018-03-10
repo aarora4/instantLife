@@ -24,19 +24,29 @@
                                 <items>
                                     <navigationItem id="Y5L-6u-CrR">
                                         <leftBarButtonItems>
-                                            <barButtonItem systemItem="compose" id="cKO-Ei-V5F"/>
-                                            <barButtonItem title="Item" id="aAT-rP-8Sc"/>
-                                            <barButtonItem title="Item" id="7Kx-zY-ApN"/>
+                                            <barButtonItem enabled="NO" systemItem="compose" id="cKO-Ei-V5F">
+                                                <color key="tintColor" red="0.34873018620000001" green="0.36255163750000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="aAT-rP-8Sc">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="7Kx-zY-ApN">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
-                                            <barButtonItem image="userIcon.png" id="FJP-zN-f3R">
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <barButtonItem title="Item" id="FJP-zN-f3R">
+                                                <color key="tintColor" red="0.34873018620000001" green="0.36255163750000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="APi-di-5WH" kind="show" identifier="" id="dyw-DD-6OX"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" id="ebr-jT-D90"/>
-                                            <barButtonItem title="Item" id="eBR-Yu-Xoq"/>
+                                            <barButtonItem title="Item" id="ebr-jT-D90">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="eBR-Yu-Xoq">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -103,17 +113,28 @@
                                     <navigationItem id="Ckd-2K-Rr4">
                                         <leftBarButtonItems>
                                             <barButtonItem systemItem="compose" id="Ts0-Ks-nQC">
+                                                <color key="tintColor" red="0.34873018620000001" green="0.36255163750000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="Zeh-Lh-IQK"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" id="kN8-Cf-g35"/>
-                                            <barButtonItem title="Item" id="9Ra-BV-RTK"/>
+                                            <barButtonItem title="Item" id="kN8-Cf-g35">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="9Ra-BV-RTK">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
-                                            <barButtonItem enabled="NO" title="Item" image="userIcon.png" id="nX8-sJ-5Zh"/>
-                                            <barButtonItem title="Item" id="IU0-3w-n2B"/>
-                                            <barButtonItem title="Item" id="yys-sb-lct"/>
+                                            <barButtonItem enabled="NO" title="Item" id="nX8-sJ-5Zh">
+                                                <color key="tintColor" red="0.34873018620000001" green="0.36255163750000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="IU0-3w-n2B">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" id="yys-sb-lct">
+                                                <color key="tintColor" red="0.7287303665" green="0.17326850329999999" blue="0.14771324129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -371,7 +392,4 @@
             <point key="canvasLocation" x="711.59420289855075" y="34.239130434782609"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="userIcon.png" width="25" height="28"/>
-    </resources>
 </document>

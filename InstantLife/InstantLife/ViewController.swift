@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //die()
+        
         let hasLaunchedKey = "HasLaunched"
         let defaults = UserDefaults.standard
         var hasLaunched = defaults.bool(forKey: hasLaunchedKey)
@@ -220,6 +220,13 @@ class ViewController: UIViewController {
         let string = String(person.age) + " Years Old"
         
         updateTextViewAge(message: string)
+        if person.age == 5
+        {
+            textViewEmptyLine()
+            updateTextView(message: "I started school")
+            highlightCurrentAge()
+            
+        }
         
         
     
